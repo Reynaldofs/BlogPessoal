@@ -1,4 +1,8 @@
-.fundNav{
+.cursor{
+    cursor: pointer;
+    color: white;
+}
 
-    background: #90c2b8;
+.text-decorator-none{
+    text-decoration: none;
 }

@@ -1,47 +1,48 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
-import { Box } from '@mui/material';
-import AddCircleRoundedIcon from '@material-ui/icons/AddCircleRounded';
-
-
+import { AppBar, Toolbar, Typography} from '@material-ui/core';
+import {Box} from '@mui/material';
+import { Link } from 'react-router-dom';
+import './Navbar.css'
 function Navbar() {
     return (
         <>
             <AppBar position="static">
-                <Toolbar style={{ backgroundColor: "#696969"}} variant="dense">
-                    <Box style={{ cursor: "pointer" }} >
-                        <Typography variant="h6" color="inherit">
-                            Blog Pessoal
+                <Toolbar variant="dense">
+                    <Box className='cursor'>
+                        <Typography variant="h5" color="inherit">
+                            BlogPessoal
                         </Typography>
                     </Box>
 
-                    <Box display="flex" justifyContent={'center'}>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
+                    <Box display="flex" justifyContent="start">
+                        <Box mx={1} className='cursor'>
                             <Typography variant="h6" color="inherit">
-                            <img width="42" height="42" src="https://img.icons8.com/fluency/48/exterior.png" alt="exterior"/>
-                            
+                                home
                             </Typography>
                         </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
+                        <Box mx={1} className='cursor'>
                             <Typography variant="h6" color="inherit">
-                            <img width="42" height="42" src="https://img.icons8.com/fluency/48/speech-bubble.png" alt="Postagens"/>
+                                postagens
                             </Typography>
                         </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
+                        <Box mx={1} className='cursor'>
                             <Typography variant="h6" color="inherit">
-                            <img width="42" height="42" src="https://img.icons8.com/fluency/48/chrome-reader-mode.png" alt="Tema"/>
+                                temas
                             </Typography>
                         </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
+                        <Box mx={1} className='cursor'>
                             <Typography variant="h6" color="inherit">
-                            <img width="42" height="42" src="https://img.icons8.com/fluency/48/add-rule.png" alt="add-Theme"/>
+                                cadastrar tema
                             </Typography>
                         </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
-                            <Typography variant="h6" color="inherit">
-                            <img width="42" height="42" src="https://img.icons8.com/fluency/48/export.png" alt="exit"/>
-                            </Typography>
-                        </Box>
+                        <Link to='/login' className='text-decorator-none'>
+                            <Box mx={1} className='cursor'>
+                                <Typography variant="h6" color="inherit">
+                                    logout
+                                </Typography>
+                            </Box>
+                        </Link>
+                        
                     </Box>
 
                 </Toolbar>

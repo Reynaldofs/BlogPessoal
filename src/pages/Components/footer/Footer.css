@@ -1,4 +1,18 @@
-.fundFooter{
+.box1{
+    background-color: #696969;
+    height: 120px;
+}
 
-    background: #09483b;
+.box2{
+    background-color: #696969;
+    height: 60px;
+}
+
+.redes{
+    font-size: 60px !important;
+    color: white;
+}
+
+.textos{
+   color: white;
 }
