@@ -2,38 +2,55 @@ import React from 'react'
 import './App.css'
 import Navbar from './pages/Navbar'
 import Footer from './pages/Components/footer/Footer'
-import  Home  from './pages/Home'
+import Home from './pages/home/Home'
 import Login from './pages/login/Login'
 import CadastroUsuario from './pages/cadastroUsuario/CadastroUsuario'
-import { BrowserRouter,Route,Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import ListaTema from './pages/Components/temas/listatema/ListaTema'
 import ListaPostagem from './pages/Components/postagens/listapostagem/ListaPostagem'
+import CadastroPost from './pages/Components/postagens/cadastroPost/CadastroPost'
+import CadastroTema from './pages/Components/temas/cadastroTema/CadastroTema'
+import DeletarPostagem from './pages/Components/postagens/deletarPostagem/DeletarPostagem'
+import DeletarTema from './pages/Components/temas/deletarTema/DeletarTema'
 
 function App() {
 
   return (
-    <BrowserRouter>
-    <Navbar />
-    <div style={{ minHeight: '100vh' }}>
-    <Routes>
-      
-    <Route path="/" element={<Login  />} />
+    <Router>
+      <Navbar />
+      <div style={{ minHeight: '100vh' }}>
+        <Routes>
 
-   <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
 
-    <Route path="/home" element={<Home />} />
+          <Route path="/login" element={<Login />} />
 
-    <Route path="/cadastroUsuario" element={<CadastroUsuario />} />
+          <Route path="/home" element={<Home />} />
 
-    <Route path="/temas" element={<ListaTema />} />
+          <Route path="/cadastroUsuario" element={<CadastroUsuario />} />
 
-    <Route path="/posts" element={<ListaPostagem />} />
+          <Route path="/temas" element={<ListaTema />} />
 
-    </Routes>
-    </div>
-    <Footer />
-    </BrowserRouter>
-  )
+          <Route path="/posts" element={<ListaPostagem />} />
+
+          <Route path="/formularioPostagem" element={<CadastroPost />} />
+
+          <Route path="/formularioPostagem/:id" element={<CadastroPost />} />
+
+          <Route path="/formularioTema" element={<CadastroTema />} />
+
+          <Route path="/formularioTema/:id" element={<CadastroTema />} />
+
+          <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
+
+          <Route path="/deletarTema/:id" element={<DeletarTema />} />
+
+        </Routes>
+      </div>
+
+      <Footer />
+    </Router>
+  );
 } export default App
 
 
